@@ -111,6 +111,14 @@ function verificarPrerequisitos(prereq) {
     });
 }
 
+function mostrarFlores() {
+    const flor = document.createElement("div");
+    flor.className = "flores-animadas";
+    flor.innerHTML = "🌸🌼🌺";
+    document.body.appendChild(flor);
+    setTimeout(() => flor.remove(), 1500);
+}
+
 function crearRamo(ramo) {
     const estado = cargarEstado(ramo.nombre) || { aprobado: false };
     const div = document.createElement("div");
@@ -129,6 +137,7 @@ function crearRamo(ramo) {
         if (div.dataset.bloqueado === "true") return;
         estado.aprobado = !estado.aprobado;
         guardarEstado(ramo.nombre, estado);
+        mostrarFlores(); // 🌸✨
         location.reload();
     });
 
