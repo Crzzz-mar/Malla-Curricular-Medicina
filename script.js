@@ -1,1 +1,91 @@
+body {
+    background: #fff7f8;
+    font-family: 'Quicksand', sans-serif;
+    color: #5a3e36;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #fddde6;
+    padding: 1em;
+    text-align: center;
+    border-bottom: 3px dotted #e8bdb1;
+}
+
+h1, h2 {
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: 2.5em;
+    color: #b07c6b;
+    margin-bottom: 0.3em;
+}
+
+#malla-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    gap: 1.5em;
+}
+
+.semestre {
+    border: 2px dashed #f5c2c2;
+    background-color: #fff0f5;
+    padding: 1em;
+    border-radius: 12px;
+}
+
+.ramos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7em;
+    margin-top: 0.5em;
+}
+
+.ramo {
+    font-family: 'Quicksand', sans-serif;
+    padding: 0.6em 1em;
+    border-radius: 10px;
+    background-color: #ffcce1;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s, transform 0.2s;
+    border: 1px solid #e6a5b4;
+}
+
+.ramo:hover {
+    transform: scale(1.03);
+}
+
+.ramo[data-aprobado="true"] {
+    background-color: #dbc4b0;
+    text-decoration: line-through;
+    border: 1px solid #c0a28f;
+}
+
+.ramo[data-bloqueado="true"] {
+    background-color: #e6e6e6;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.ramo::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -1.8em;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffeef3;
+    padding: 0.3em 0.6em;
+    border-radius: 8px;
+    font-size: 0.75em;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+}
+
+.ramo:hover::after {
+    opacity: 1;
+}
 
