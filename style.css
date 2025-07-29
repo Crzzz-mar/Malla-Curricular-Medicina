@@ -4,6 +4,7 @@ body {
     color: #5a3e36;
     margin: 0;
     padding: 0;
+    position: relative;
 }
 
 header {
@@ -14,7 +15,7 @@ header {
 }
 
 h1, h2 {
-    font-family: 'Caveat', cursive;
+    font-family: 'Dancing Script', cursive;
     font-weight: 700;
     font-size: 2.5em;
     color: #b07c6b;
@@ -37,8 +38,8 @@ h1, h2 {
 
 .ramos {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.7em;
+    flex-direction: column; /* Vertical 🌸 */
+    gap: 0.5em;
     margin-top: 0.5em;
 }
 
@@ -89,3 +90,51 @@ h1, h2 {
     opacity: 1;
 }
 
+/* 🌸 Decoraciones */
+.decoracion {
+    position: absolute;
+    z-index: 1;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.bunny {
+    top: 10px;
+    right: 10px;
+    width: 80px;
+}
+
+.flor1 {
+    bottom: 20px;
+    left: 15px;
+    width: 60px;
+}
+
+.flor2 {
+    bottom: 80px;
+    right: 40px;
+    width: 70px;
+}
+
+/* 🌼 Florecitas cuando apruebas un ramo */
+.flores-animadas {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem;
+    pointer-events: none;
+    z-index: 999;
+    animation: subirFlores 1.5s ease-out forwards;
+}
+
+@keyframes subirFlores {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -150%) scale(1.5);
+    }
+}
